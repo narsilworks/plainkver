@@ -14,6 +14,9 @@ type PlainKVer interface {
 	// Open a connection to the database
 	Open() error
 
+	// Begin a transaction
+	Begin() error
+
 	// Get a value by key
 	Get(key string) ([]byte, error)
 
@@ -48,6 +51,12 @@ type PlainKVer interface {
 
 	// Reset the key tally.
 	TallyReset(key string) error
+
+	// Commit transaction
+	Commit() error
+
+	// Rollback transaction
+	Rollback() error
 
 	// Close the connection to the database
 	Close() error
