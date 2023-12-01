@@ -24,7 +24,7 @@ type PlainKVer interface {
 	Set(key string, value []byte) error
 
 	// Set the current bucket. The default bucket name is 'default'.
-	SetBucket(bucket string) error
+	SetBucket(bucket string)
 
 	// Delete a key
 	Del(key string) error
